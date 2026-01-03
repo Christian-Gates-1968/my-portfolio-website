@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export function Hero() {
   const techStack = {
@@ -35,7 +36,14 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="pt-32 pb-16">
+    <motion.section 
+      id="home" 
+      className="pb-16 mt-[40vh]"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="grid md:grid-cols-2 gap-8 mb-12">
         {/* Left: Text Content */}
         <div className="space-y-6">
@@ -113,6 +121,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
