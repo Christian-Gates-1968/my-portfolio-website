@@ -7,16 +7,25 @@ export function Navbar() {
         <a href="#home" className="text-xl font-bold text-cyan-400 hover:text-cyan-300 transition-colors">
           KB
         </a>
-        <div className="flex gap-8">
-          <a href="#home" className="text-sm text-gray-300 hover:text-cyan-400 transition-colors">
+        <div className="flex gap-4">
+          <button 
+            onClick={() => window.location.hash = '#home'} 
+            className="px-4 py-2 text-sm text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 rounded-md border border-transparent hover:border-cyan-500/30 transition-all"
+          >
             Home
-          </a>
-          <a href="#projects" className="text-sm text-gray-300 hover:text-cyan-400 transition-colors">
+          </button>
+          <button 
+            onClick={() => window.location.hash = '#projects'} 
+            className="px-4 py-2 text-sm text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 rounded-md border border-transparent hover:border-cyan-500/30 transition-all"
+          >
             Projects
-          </a>
-          <a href="#contact" className="text-sm text-gray-300 hover:text-cyan-400 transition-colors">
+          </button>
+          <button 
+            onClick={() => window.location.hash = '#contact'} 
+            className="px-4 py-2 text-sm text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 rounded-md border border-transparent hover:border-cyan-500/30 transition-all"
+          >
             Contact
-          </a>
+          </button>
         </div>
       </div>
     </nav>
