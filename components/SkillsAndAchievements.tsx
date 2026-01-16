@@ -54,7 +54,7 @@ const achievements = [
   },
   {
     icon: Star,
-    title: "CGPA 8.04",
+    title: "CGPA 8.07",
     description: "KIIT University, B.Tech CSE",
     color: "from-purple-500 to-pink-500",
   },
@@ -79,8 +79,20 @@ export function SkillsAndAchievements() {
             className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-cyan-700 transition-colors"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className={`p-3 rounded-lg bg-${category.color}-900/30 border border-${category.color}-700/50`}>
-                <category.icon className={`text-${category.color}-400`} size={24} />
+              <div className={
+                category.color === "cyan" 
+                  ? "p-3 rounded-lg bg-cyan-900/30 border border-cyan-700/50"
+                  : category.color === "blue"
+                  ? "p-3 rounded-lg bg-blue-900/30 border border-blue-700/50"
+                  : "p-3 rounded-lg bg-purple-900/30 border border-purple-700/50"
+              }>
+                <category.icon className={
+                  category.color === "cyan"
+                    ? "text-cyan-400"
+                    : category.color === "blue"
+                    ? "text-blue-400"
+                    : "text-purple-400"
+                } size={24} />
               </div>
               <h3 className="text-xl font-semibold">{category.title}</h3>
             </div>
@@ -98,7 +110,13 @@ export function SkillsAndAchievements() {
                       whileInView={{ width: `${skill.level}%` }}
                       viewport={{ once: true }}
                       transition={{ duration: 1, delay: 0.2 + skillIdx * 0.1 }}
-                      className={`h-full bg-gradient-to-r from-${category.color}-500 to-${category.color}-400 rounded-full`}
+                      className={
+                        category.color === "cyan"
+                          ? "h-full bg-gradient-to-r from-cyan-500 to-cyan-400 rounded-full"
+                          : category.color === "blue"
+                          ? "h-full bg-gradient-to-r from-blue-500 to-blue-400 rounded-full"
+                          : "h-full bg-gradient-to-r from-purple-500 to-purple-400 rounded-full"
+                      }
                     />
                   </div>
                 </div>
